@@ -1,0 +1,2 @@
+- name: setup-chromedriver
+  uses: nanasess/setup-chromedriver@v2.3.0

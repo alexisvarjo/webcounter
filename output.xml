@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.7 on linux)" generated="2025-11-17T12:02:45.340926" rpa="false" schemaversion="5">
-<suite id="s1" name="Tests" source="/home/alexis/Desktop/koulu/HY/Kandi/Ohjelmointi/ohtu/webcounter/src/tests">
-<suite id="s1-s1" name="Increment" source="/home/alexis/Desktop/koulu/HY/Kandi/Ohjelmointi/ohtu/webcounter/src/tests/increment.robot">
+<robot generator="Robot 7.3.2 (Python 3.12.7 on linux)" generated="2025-11-17T12:33:29.996559" rpa="false" schemaversion="5">
+<suite id="s1" name="Reset" source="/home/alexis/Desktop/koulu/HY/Kandi/Ohjelmointi/ohtu/webcounter/src/tests/reset.robot">
 <kw name="Open And Configure Browser" owner="resource" type="SETUP">
 <if>
 <branch type="IF" condition="$BROWSER == 'chrome'">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-11-17T12:02:45.397784" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fe2d0cfb440&gt;</msg>
+<msg time="2025-11-17T12:33:30.055132" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fa671f723f0&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-11-17T12:02:45.397647" elapsed="0.000160"/>
+<status status="PASS" start="2025-11-17T12:33:30.054985" elapsed="0.000168"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--incognito</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-11-17T12:02:45.397877" elapsed="0.000061"/>
+<status status="PASS" start="2025-11-17T12:33:30.055227" elapsed="0.000063"/>
 </kw>
-<status status="PASS" start="2025-11-17T12:02:45.397363" elapsed="0.000598"/>
+<status status="PASS" start="2025-11-17T12:33:30.054696" elapsed="0.000617"/>
 </branch>
 <branch type="ELSE IF" condition="$BROWSER == 'firefox'">
 <kw name="Evaluate" owner="BuiltIn">
@@ -28,178 +27,144 @@
 <arg>sys.modules['selenium.webdriver'].FirefoxOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-11-17T12:02:45.398025" elapsed="0.000010"/>
+<status status="NOT RUN" start="2025-11-17T12:33:30.055382" elapsed="0.000010"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--private-window</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2025-11-17T12:02:45.398070" elapsed="0.000009"/>
+<status status="NOT RUN" start="2025-11-17T12:33:30.055427" elapsed="0.000009"/>
 </kw>
-<status status="NOT RUN" start="2025-11-17T12:02:45.397982" elapsed="0.000112"/>
+<status status="NOT RUN" start="2025-11-17T12:33:30.055334" elapsed="0.000117"/>
 </branch>
-<status status="PASS" start="2025-11-17T12:02:45.397348" elapsed="0.000760"/>
+<status status="PASS" start="2025-11-17T12:33:30.054680" elapsed="0.000785"/>
 </if>
 <if>
 <branch type="IF" condition="$HEADLESS == 'true'">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.05 seconds</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2025-11-17T12:02:45.398205" elapsed="0.000088"/>
+<status status="PASS" start="2025-11-17T12:33:30.055569" elapsed="0.000094"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--headless</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-11-17T12:02:45.398333" elapsed="0.000051"/>
+<status status="PASS" start="2025-11-17T12:33:30.055701" elapsed="0.000052"/>
 </kw>
-<status status="PASS" start="2025-11-17T12:02:45.398133" elapsed="0.000268"/>
+<status status="PASS" start="2025-11-17T12:33:30.055493" elapsed="0.000277"/>
 </branch>
 <branch type="ELSE">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>${DELAY}</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="NOT RUN" start="2025-11-17T12:02:45.398451" elapsed="0.000009"/>
+<status status="NOT RUN" start="2025-11-17T12:33:30.055819" elapsed="0.000009"/>
 </kw>
-<status status="NOT RUN" start="2025-11-17T12:02:45.398416" elapsed="0.000058"/>
+<status status="NOT RUN" start="2025-11-17T12:33:30.055784" elapsed="0.000057"/>
 </branch>
-<status status="PASS" start="2025-11-17T12:02:45.398127" elapsed="0.000359"/>
+<status status="PASS" start="2025-11-17T12:33:30.055487" elapsed="0.000366"/>
 </if>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-17T12:02:45.398628" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<msg time="2025-11-17T12:03:21.772436" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg time="2025-11-17T12:03:21.772575" level="FAIL">NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
-</msg>
+<msg time="2025-11-17T12:33:30.055996" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=${BROWSER}</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="FAIL" start="2025-11-17T12:02:45.398527" elapsed="36.378902">NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
-</status>
+<status status="PASS" start="2025-11-17T12:33:30.055890" elapsed="0.124580"/>
 </kw>
-<status status="FAIL" start="2025-11-17T12:02:45.397253" elapsed="36.380446">NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
-</status>
+<status status="PASS" start="2025-11-17T12:33:30.054572" elapsed="0.125989"/>
 </kw>
-<test id="s1-s1-t1" name="At start the counter is zero" line="7">
-<status status="FAIL" start="2025-11-17T12:03:21.777909" elapsed="0.000343">Parent suite setup failed:
-NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
-</status>
+<test id="s1-t1" name="At start the counter is zero" line="7">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:33:30.180962" level="INFO">Opening url 'http://localhost:5001'</msg>
+<arg>${HOME_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-11-17T12:33:30.180873" elapsed="0.081437"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:33:30.314632" level="INFO">Page title is 'Laskuri'.</msg>
+<arg>Laskuri</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-11-17T12:33:30.262554" elapsed="0.052221"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:33:30.586890" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-11-17T12:33:30.587043" level="FAIL">Page should have contained text 'nappia painettu 0 kertaa' but did not.</msg>
+<arg>nappia painettu 0 kertaa</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2025-11-17T12:33:30.315006" elapsed="0.272669">Page should have contained text 'nappia painettu 0 kertaa' but did not.</status>
+</kw>
+<status status="FAIL" start="2025-11-17T12:33:30.180619" elapsed="0.407249">Page should have contained text 'nappia painettu 0 kertaa' but did not.</status>
 </test>
-<test id="s1-s1-t2" name="When button pressed twice the counter is two" line="12">
-<status status="FAIL" start="2025-11-17T12:03:21.778397" elapsed="0.000153">Parent suite setup failed:
-NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
-</status>
+<test id="s1-t2" name="When counter has a zero value and it is reset the value becomes zero" line="12">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:33:30.588399" level="INFO">Opening url 'http://localhost:5001'</msg>
+<arg>${HOME_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-11-17T12:33:30.588287" elapsed="0.059708"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:33:30.648527" level="INFO">Clicking button 'Nollaa'.</msg>
+<arg>Nollaa</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:33:30.648213" elapsed="0.232029"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:33:30.985410" level="INFO">Current page contains text 'nappia painettu 0 kertaa'.</msg>
+<arg>nappia painettu 0 kertaa</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-17T12:33:30.880453" elapsed="0.105026"/>
+</kw>
+<status status="PASS" start="2025-11-17T12:33:30.588037" elapsed="0.397598"/>
 </test>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-17T12:03:21.778857" elapsed="0.000283"/>
+<test id="s1-t3" name="When counter has non-zero value it is reset the value becomes zero" line="17">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:33:30.986085" level="INFO">Opening url 'http://localhost:5001'</msg>
+<arg>${HOME_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-11-17T12:33:30.985987" elapsed="0.058605"/>
 </kw>
-<status status="FAIL" start="2025-11-17T12:02:45.350472" elapsed="36.428697">Suite setup failed:
-NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
-</status>
-</suite>
-<suite id="s1-s2" name="Reset" source="/home/alexis/Desktop/koulu/HY/Kandi/Ohjelmointi/ohtu/webcounter/src/tests/reset.robot">
-<kw name="Open And Configure Browser" owner="resource" type="SETUP">
-<if>
-<branch type="IF" condition="$BROWSER == 'chrome'">
-<kw name="Evaluate" owner="BuiltIn">
-<var>${options}</var>
-<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
-<arg>sys</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="FAIL" start="2025-11-17T12:03:21.780877" elapsed="0.000083">Execution terminated by signal</status>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:33:31.044988" level="INFO">Clicking button 'Paina'.</msg>
+<arg>Paina</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:33:31.044816" elapsed="0.233384"/>
 </kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${options}</arg>
-<arg>add_argument</arg>
-<arg>--incognito</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2025-11-17T12:03:21.781019" elapsed="0.000012"/>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:33:31.385761" level="INFO">Current page contains text 'nappia painettu 1 kertaa'.</msg>
+<arg>nappia painettu 1 kertaa</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-17T12:33:31.278549" elapsed="0.107360"/>
 </kw>
-<status status="FAIL" start="2025-11-17T12:03:21.780728" elapsed="0.000335">Execution terminated by signal</status>
-</branch>
-<branch type="ELSE IF" condition="$BROWSER == 'firefox'">
-<kw name="Evaluate" owner="BuiltIn">
-<var>${options}</var>
-<arg>sys.modules['selenium.webdriver'].FirefoxOptions()</arg>
-<arg>sys</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-11-17T12:03:21.781136" elapsed="0.000012"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:33:31.386291" level="INFO">Clicking button 'Nollaa'.</msg>
+<arg>Nollaa</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-17T12:33:31.386134" elapsed="0.224971"/>
 </kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${options}</arg>
-<arg>add_argument</arg>
-<arg>--private-window</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2025-11-17T12:03:21.781188" elapsed="0.000011"/>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-17T12:33:31.716818" level="INFO">Current page contains text 'nappia painettu 0 kertaa'.</msg>
+<arg>nappia painettu 0 kertaa</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-17T12:33:31.611337" elapsed="0.105574"/>
 </kw>
-<status status="NOT RUN" start="2025-11-17T12:03:21.781088" elapsed="0.000129"/>
-</branch>
-<status status="FAIL" start="2025-11-17T12:03:21.780714" elapsed="0.000520">Execution terminated by signal</status>
-</if>
-<if>
-<branch type="IF" condition="$HEADLESS == 'true'">
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
-<arg>0.05 seconds</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="NOT RUN" start="2025-11-17T12:03:21.781308" elapsed="0.000012"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${options}</arg>
-<arg>add_argument</arg>
-<arg>--headless</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2025-11-17T12:03:21.781356" elapsed="0.000010"/>
-</kw>
-<status status="NOT RUN" start="2025-11-17T12:03:21.781265" elapsed="0.000152"/>
-</branch>
-<branch type="ELSE">
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
-<arg>${DELAY}</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="NOT RUN" start="2025-11-17T12:03:21.781477" elapsed="0.000017"/>
-</kw>
-<status status="NOT RUN" start="2025-11-17T12:03:21.781435" elapsed="0.000076"/>
-</branch>
-<status status="NOT RUN" start="2025-11-17T12:03:21.781258" elapsed="0.000268"/>
-</if>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<arg>browser=${BROWSER}</arg>
-<arg>options=${options}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" start="2025-11-17T12:03:21.781572" elapsed="0.000010"/>
-</kw>
-<status status="FAIL" start="2025-11-17T12:03:21.780628" elapsed="0.001000">Execution terminated by signal</status>
-</kw>
-<test id="s1-s2-t1" name="At start the counter is non-zero" line="7">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2025-11-17T12:03:21.781658" elapsed="0.000185">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-s2-t2" name="When counter has a nonzero value and it is reset the value becomes zero" line="12">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2025-11-17T12:03:21.781932" elapsed="0.000149">Test execution stopped due to a fatal error.</status>
+<status status="PASS" start="2025-11-17T12:33:30.985774" elapsed="0.731293"/>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-17T12:03:21.782232" elapsed="0.000058"/>
+<status status="PASS" start="2025-11-17T12:33:31.717424" elapsed="0.107378"/>
 </kw>
-<status status="FAIL" start="2025-11-17T12:03:21.779431" elapsed="0.002880">Suite setup failed:
-Execution terminated by signal</status>
-</suite>
-<status status="FAIL" start="2025-11-17T12:02:45.341338" elapsed="36.441216"/>
+<status status="FAIL" start="2025-11-17T12:33:29.996981" elapsed="1.827934"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="4" skip="0">All Tests</stat>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat info="combined" combined="NOT robot:exit" pass="0" fail="2" skip="0">NOT robot:exit</stat>
 </tag>
 <suite>
-<stat name="Tests" id="s1" pass="0" fail="4" skip="0">Tests</stat>
-<stat name="Increment" id="s1-s1" pass="0" fail="2" skip="0">Tests.Increment</stat>
-<stat name="Reset" id="s1-s2" pass="0" fail="2" skip="0">Tests.Reset</stat>
+<stat name="Reset" id="s1" pass="2" fail="1" skip="0">Reset</stat>
 </suite>
 </statistics>
 <errors>
